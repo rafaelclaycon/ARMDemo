@@ -17,28 +17,32 @@ struct ContentView: View {
                 Text(textoFundo)
                     .font(.title)
                     .bold()
+                    .opacity(0.5)
                 
                 ScrollView {
+                    Text("🇬🇧")
+                        .font(.title)
                     Text("🍎")
                         .font(.title)
-                    Text("João Vítor dos Santos")
+                    Text("📱")
+                        .font(.title)
+                    Text("⌚️")
+                        .font(.title)
+                    Text("💻")
+                        .font(.title)
+                    Text("🌎")
+                        .font(.title)
+                    Text("João dos Santos")
+                        .font(.title3)
                     Text("Leticia Sant'anna")
+                        .font(.title3)
                     Text("Matheus Milanezi")
+                        .font(.title3)
                     Text("Rafael Schmitt")
-                }
+                        .font(.title3)
+                }.background(Color.yellow)
             }
-            Button(action: {
-                exibirModal = true
-            }) {
-                Text("Autores")
-            }
-            .sheet(isPresented: $exibirModal, content: {
-                Text("João Vítor dos Santos")
-                Text("Leticia Sant'anna")
-                Text("Matheus Milanezi")
-                Text("Rafael Schmitt")
-            })
-        }
+        }.background(Color.blue)
     }
 }
 
