@@ -34,8 +34,8 @@ struct ContentView: View {
     @State private var backgroundColor: Color = .red
     @State private var fadeBackground: Bool = true
         
-    let alturaLinha: CGFloat = 160
-    let alturaLinhaNomes: CGFloat = 35
+    let rowHeight: CGFloat = 160
+    let nameRowHeight: CGFloat = 35
     
     var body: some View {
         VStack {
@@ -45,38 +45,40 @@ struct ContentView: View {
                     .bold()
                     .opacity(self.fadeBackground ? 0.2 : 0.5)
                 
+                // ScrollView is limited to 10 items on the watch.
                 ScrollView {
+                    // This GeometryReader is how you get the scroll position.
                     GeometryReader { innerGeo -> Text in
                         self.posY = innerGeo.frame(in: .global).minY
                         return Text("")
                     }
                     Text("🇬🇧")
                         .font(.largeTitle)
-                        .frame(height: alturaLinha)
+                        .frame(height: rowHeight)
                     Text("📱")
                         .font(.largeTitle)
-                        .frame(height: alturaLinha)
+                        .frame(height: rowHeight)
                     Text("⌚️")
                         .font(.largeTitle)
-                        .frame(height: alturaLinha)
+                        .frame(height: rowHeight)
                     Text("💻")
                         .font(.largeTitle)
-                        .frame(height: alturaLinha)
+                        .frame(height: rowHeight)
                     Text("🌎")
                         .font(.largeTitle)
-                        .frame(height: alturaLinha)
+                        .frame(height: rowHeight)
                     Text("João dos Santos")
                         .font(.title3)
-                        .frame(height: alturaLinhaNomes)
+                        .frame(height: nameRowHeight)
                     Text("Leticia Sant'anna")
                         .font(.title3)
-                        .frame(height: alturaLinhaNomes)
+                        .frame(height: nameRowHeight)
                     Text("Matheus Milanezi")
                         .font(.title3)
-                        .frame(height: alturaLinhaNomes)
+                        .frame(height: nameRowHeight)
                     Text("Rafael Schmitt")
                         .font(.title3)
-                        .frame(height: alturaLinhaNomes)
+                        .frame(height: nameRowHeight)
                 }
             }
         }.background(backgroundColor)
