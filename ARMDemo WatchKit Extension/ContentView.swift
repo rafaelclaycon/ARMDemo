@@ -78,9 +78,6 @@ struct ContentView: View {
                         .font(.title3)
                         .frame(height: alturaLinhaNomes)
                 }
-                
-//                Text("\(posY)")
-//                    .offset(y: -60.0)
             }
         }.background(backgroundColor)
     }
